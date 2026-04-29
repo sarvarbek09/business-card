@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Premium Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+    <div class="card">
+        <div class="av-c">
+            <img src="img/logo.png" alt="Avatar" class="av">
+            <div class="st"></div>
+        </div>
+        <h1>Sarvarbek Xolmuhammedov</h1>
+        <p>Frontend Developer</p>
+        <div class="links">
+            <a href="https://github.com/sarvarbek09" target="_blank" class="btn b1"><i class="fa-brands fa-github"></i>
+                GitHub</a>
+            <a href="https://sarvarbek09-portfolio.vercel.app" target="_blank" class="btn b2"><i
+                    class="fa-solid fa-layer-group"></i> Portfolio</a>
+            <a href="https://t.me/s_gulomvc" target="_blank" class="btn b2"><i class="fa-brands fa-telegram"></i>
+                Telegram</a>
+        </div>
+        <div class="soc">
+            <a href="https://www.linkedin.com/in/sarvarbek-xolmuhammedov-173aaa337" target="_blank"><i
+                    class="fa-brands fa-linkedin"></i></a>
+            <a href="https://instagram.com/gulomvc.dev" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sarvarbekxolmuhammedov28@gmail.com"
+                target="_blank"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+    </div>
+    <script>
+        const c = document.getElementById('c'), x = c.getContext('2d'); let w, h, p = []; function r() { w = c.width = innerWidth; h = c.height = innerHeight } onresize = r; r(); for (let i = 0; i < 120; i++)p.push({ x: Math.random() * w, y: Math.random() * h, r: Math.random() * 1.5 + .5, vx: (Math.random() - .5) * .3, vy: (Math.random() - .5) * .3, a: Math.random() * .5 + .3 }); function a() { requestAnimationFrame(a); x.clearRect(0, 0, w, h); p.forEach(e => { x.beginPath(); x.arc(e.x, e.y, e.r, 0, 6.28); x.fillStyle = `rgba(255,255,255,${e.a})`; x.fill(); e.x += e.vx; e.y += e.vy; if (e.x < 0) e.x = w; if (e.x > w) e.x = 0; if (e.y < 0) e.y = h; if (e.y > h) e.y = 0 }) } a();
+    </script>
+</body>
+
+</html>
